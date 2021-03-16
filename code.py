@@ -1,7 +1,4 @@
-import random
+a = range(10)
+b = "cengiz"
 
-diict = {"abc": 100, "def": 200, "xyz": 50}
-
-a = sorted(diict, key=lambda element: random.random())
-
-print(a)
+print(list(zip(a, b)))

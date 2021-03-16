@@ -1,7 +1,8 @@
-a = list(filter(lambda y: y < 25, map(lambda x: x**2, range(10))))
+from functools import reduce
 
-print(a)
 
-b = [i**2 for i in range(10) if i**2 < 25]
+def factorial(number):
+    return reduce(lambda x, y: x * y, range(1, number + 1))
 
-print(b)
+
+print(factorial(5))

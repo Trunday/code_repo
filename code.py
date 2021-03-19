@@ -1,14 +1,8 @@
-def adder(n):
-    def inner(x):
-        return x + n
-    return inner
+adders = []
 
+for n in range(1, 4):
+    adders.append(lambda x: x + n)
 
-adder_1 = adder(10)
-adder_2 = adder(10)
-adder_3 = adder(10)
-# bir kısayaol?
-
-print(adder_1(1))
-print(adder_2(2))
-print(adder_3(3))
+print(adders[0](10))  # sonuç istenmeyen bir şekilde 13.
+# Çünkü n değeri 'global scope' içerisinde en son 3 değerini aldı. Ve bu da adders içerisindeki fonksiyonlardan
+# hangisi çağırılırsa çağırılsın 'x+3' dönüleceği anlamına gelir. Çözüm bir sonraki kodda.

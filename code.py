@@ -1,8 +1,8 @@
 adders = []
 
 for n in range(1, 4):
-    adders.append(lambda x: x + n)
+    adders.append(lambda x, a=n: x + a)
 
-print(adders[0](10))  # sonuç istenmeyen bir şekilde 13.
-# Çünkü n değeri 'global scope' içerisinde en son 3 değerini aldı. Ve bu da adders içerisindeki fonksiyonlardan
-# hangisi çağırılırsa çağırılsın 'x+3' dönüleceği anlamına gelir. Çözüm bir sonraki kodda.
+print(adders[0](10))  # sonuç 11.
+# Bu durum aslında fonksiyon yaratılmasıyla ilişkili. Fonksiyon parametresine atanan varsayılan değer aynen tutulur ve fonksiyon 
+# çağırılırken de bu değer kullanılır. 
